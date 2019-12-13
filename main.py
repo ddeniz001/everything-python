@@ -511,5 +511,9 @@ def breakChocolate(n, m):
     else:
         ans = n-m
         return ans
+
+import praw
+reddit = praw.Reddit()
+reddit.subreddit('movies').hot(limit=10)
         
         
