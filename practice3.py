@@ -11,8 +11,8 @@ while line:
 
 infile.close()
 outfile.close()
-'''
-'''
+
+
 # FIXED
 with open("/Users/hoppa/Desktop/studentnames.txt") as f:
     for line in f:
@@ -24,7 +24,7 @@ with open("/Users/hoppa/Desktop/studentnames.txt") as f:
         print(items[0], "MAX SCORE->", max(items[1:]), " / MIN SCORE->", min(items[1:]))
         print("---GRADE AVERAGE: ", average,"\n")'''
 
-'''
+
 with open("/Users/hoppa/Desktop/labdata.txt") as f:
     for line in f:
         items = line.split()
@@ -71,7 +71,6 @@ def add_fruit(inventory, fruit, quantity=0):
         else: 
             inventory[fruit] +=1
     return inventory
-
 
 
 with open("/Users/hoppa/Desktop/alice.txt", "r") as f:

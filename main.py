@@ -6,11 +6,9 @@ class Point:
         self.x = x
         self.y = y
 
-
     def getX(self):return self.x    
     def getY(self):return self.y
     def __str__(self):return "x=" + str(self.x) + ", y=" + str(self.y)
-
 
     def distanceFromPoint(self, otherPoint):
         dx = (otherPoint.getX() - self.x)
@@ -53,6 +51,23 @@ class Point:
         nx = self.x
         ny = -self.y
         return (nx, ny)
+
+class labeledPoint(Point):
+    def __init__(self, x,y,label):
+        self.point = Point(x,y)
+        self.label = label
+
+    def __str__(self):
+        return "x=" + str(self.x)+", y="+str(self.y)+ " ("+self.label+ ")"
+
+    def distanceFromOrigin(self):
+        return self.point.distanceFromOrigin()
+
+lp = labeledPoint(3,4,'a label')
+
+print(lp)
+
+
 
 class Circle:
     def __init__(self,radius):
@@ -113,19 +128,12 @@ class Fraction:
 def rational(f1,f2):
     return f1.getNum() * f2.getDen() == f2.getNum() * f1.getDen()
 
-f1 = Fraction(1,2)
-f2 = Fraction(1,2)
-f3 = Fraction(15,20)
-print(f1 == f2)
-
-
 
 def breakChocolate(m, n):
     if n*m == 1: return 0
     if (n*m)-1 < 0: return 0
     else:
         return (n*m)-1
-
 
 
 def findAverage(r1,r2):return r1 // r2
@@ -157,7 +165,3 @@ class Rectangle:
 
     def collisionDetection(self):pass
 
-
-r1 = Rectangle(2,3)
-r2 = Rectangle(4,5)
-r1.getArea()
