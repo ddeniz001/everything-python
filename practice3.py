@@ -39,8 +39,8 @@ with open("/Users/hoppa/Desktop/labdata.txt") as f:
 
     def plotRegression(x,y,n):
         m = (sum(x)*sum(y) - n * (x - sum(x)/len(x)*sum(y)/len(y))) / sum(x)**2 - n*x**2
-        '''
-'''
+        
+
 import turtle
 t = turtle.Turtle()
 wn = turtle.Screen()
@@ -83,4 +83,4 @@ with open("/Users/hoppa/Desktop/alice.txt", "r") as f:
                 word.lower()
                 if len(word) > len(longestWord):
                     longestWord = word
-    print(longestWord)
+    print(longestWord)'''
