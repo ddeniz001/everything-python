@@ -1,5 +1,4 @@
 import math
-
 '''
 class Point:
     def __init__(self, x, y):
@@ -66,7 +65,6 @@ class labeledPoint(Point):
 lp = labeledPoint(3,4,'a label')
 
 print(lp)
-
 
 
 class Circle:
@@ -162,66 +160,103 @@ class Rectangle:
         newWidth = self.height
         newHeight = self.width
         return Rectangle(newWidth,newHeight)
-
-    def collisionDetection(self):pass
 '''
 
+myList = [1,2,3,4,2]
 
-class BasePostalAddress:
-    def __init__(self, country, recipient):
-        self.country = country
-        self.recipient = recipient
+import random
 
-    def display(self):
-        print(self.country)
-        print(self.recipient)
+def generateOne(strlen):
+    alphabet = 'abcdefghijklmnopqrstuvwxyz '
+    res = ''
+    for i in range(strlen):
+        res += alphabet[random.randrange(27)]
+    return res
 
-    def validate(self):
-        return self.recipient != '' and self.country != ''
-
-    def isInCity(self, city):
-        return False
-
-
-class IrishPostalAddress(BasePostalAddress):
-    def __init__(self, recipient, postalCode):
-        super().__init__("IRELAND", recipient)
-        self.postalCode = postalCode
-
-    def display(self):
-        print(self.recipient)
-        print(self.postalCode)
-        print(self.country)
-
-    def validate(self):
-        return super().validate() and len(self.postalCode) == 7
+def score(goal, testStr):
+    numSame = 0
+    for i in range(len(goal)):
+        if goal[i] == testStr[i]:
+            numSame+=1
+    return numSame / len(goal)
 
 
-class UsPostalAddress(BasePostalAddress):
-    def __init__(self, recipient, street, city, state,zipcode):
-        super().__init__("USA",recipient)
-        self.street = street
-        self.city = city
-        self.state = state
-        self.zip = zipcode
+def main():
+    goalstring = 'ananin ami'
+    newstring = generateOne(28)
+    newscore = score(goalstring, newstring)
+    best = 0
+
+    while newscore < 1:
+        if newscore > best:
+            print(newscore, newstring)
+            best = newscore
+            
+        newstring = generateOne(28)
+        newscore = score(goalstring, newstring)         
+
     
-    def display(self):
-        print(self.recipient)
-        print(self.street)
-        print(self.city + ", " + self.state + "  " + self.zip)
-        print(self.country)
+
+
+def pass_hash(strng):
+    hashedStr = ''
+
+    alphabet = 'abcdefghijklmnopqrstuvwxyz'
+    randChars = '!@#$%^&*()_+/\|~'
+
+
+    for i in range(30):
+        i = alphabet[random.randrange(26)] + randChars[random.randrange(15)] 
+        hashedStr += i
+    return hashedStr
+
+#print(pass_hash("abskdjasldjas"))
+
+
+def reverse(x: int):
+    if x < 0:
+        x = abs(x)
+        x = str(x)
+        if x.rindex(x) == '0':
+            x.strip('0')
+            return x[::-1]    
+    if x < 0:
+        x = abs(x)
+        x = str(x)
+        return '-'+x[::-1]
+    else:
+        x = str(x)
+        x = x[::-1]
+        return x.strip('0')
+
+
+
+def replaceString(string):
+    newStr = ''
+    for char in string:
+        if char == 'e':
+            char 
+        else:
+            newStr+=char
+    return newStr
+
+def subtractProductAndSum(n: int):pass
+
+
+
+def anan(lst):
+    newlst = []
     
-    def validate(self):
-        return (super().validate() and self.city != '' and 
-            len(self.state) == 2 and len(self.zip) == 5 or len(self.zip) == 9)
+    for x in lst:
+        x **=2
+        minNum = lst[0]
+        if x < minNum:
+            x = minNum
+        newlst.append(minNum)   
 
-    def isInCity(self, city):
-        return self.city == city
+    return newlst
 
 
-addrList = [IrishPostalAddress("Alf Jones", "1234567"),
-            UsPostalAddress("Alfonzo Jones","123 Street","123City", "SC", "12345")]
-
-for addr in addrList:
-    if addr.isInCity('123City'):
-        addr.display()
+a = [[3],[4]]
+a[0]+=1
+print(a)
