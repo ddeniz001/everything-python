@@ -166,6 +166,7 @@ myList = [1,2,3,4,2]
 
 import random
 
+
 def generateOne(strlen):
     alphabet = 'abcdefghijklmnopqrstuvwxyz '
     res = ''
@@ -179,7 +180,6 @@ def score(goal, testStr):
         if goal[i] == testStr[i]:
             numSame+=1
     return numSame / len(goal)
-
 
 def main():
     goalstring = 'ananin ami'
@@ -196,22 +196,18 @@ def main():
         newscore = score(goalstring, newstring)         
 
     
-
-
 def pass_hash(strng):
     hashedStr = ''
 
     alphabet = 'abcdefghijklmnopqrstuvwxyz'
     randChars = '!@#$%^&*()_+/\|~'
 
-
     for i in range(30):
         i = alphabet[random.randrange(26)] + randChars[random.randrange(15)] 
         hashedStr += i
     return hashedStr
 
-#print(pass_hash("abskdjasldjas"))
-
+# print(pass_hash("abskdjasldjas"))
 
 def reverse(x: int):
     if x < 0:
@@ -229,8 +225,6 @@ def reverse(x: int):
         x = x[::-1]
         return x.strip('0')
 
-
-
 def replaceString(string):
     newStr = ''
     for char in string:
@@ -241,7 +235,6 @@ def replaceString(string):
     return newStr
 
 def subtractProductAndSum(n: int):pass
-
 
 
 def anan(lst):
@@ -256,7 +249,9 @@ def anan(lst):
 
     return newlst
 
+a = [1,2,3,5]
 
-a = [[3],[4]]
-a[0]+=1
+for i in a:
+    a[0] = a[i]
+    i=-1
 print(a)
