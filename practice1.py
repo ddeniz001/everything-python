@@ -99,7 +99,6 @@ def removeChar(text, char):
             newString += i
     return newString
 
-print(removeChar("Pig f&ckers for ALAbama.", "g"))
 
 def borrow(s):
     punctuations = '''!()-[];:'"{\,<>./?@}#$%^&*_~'''
@@ -127,3 +126,6 @@ def isPalindrome(myStr):
         return False
  
 def removeFirstOccurence(string1, word):return 
+
+
+

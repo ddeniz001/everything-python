@@ -196,7 +196,7 @@ def main():
         newscore = score(goalstring, newstring)         
 
     
-def pass_hash(strng):
+def pass_hash(string):
     hashedStr = ''
 
     alphabet = 'abcdefghijklmnopqrstuvwxyz'
@@ -210,7 +210,7 @@ def pass_hash(strng):
 # print(pass_hash("abskdjasldjas"))
 
 def reverse(x: int):
-    if x < 0:
+    if x < 0:   
         x = abs(x)
         x = str(x)
         if x.rindex(x) == '0':
@@ -224,6 +224,7 @@ def reverse(x: int):
         x = str(x)
         x = x[::-1]
         return x.strip('0')
+
 
 def replaceString(string):
     newStr = ''
@@ -249,9 +250,3 @@ def anan(lst):
 
     return newlst
 
-a = [1,2,3,5]
-
-for i in a:
-    a[0] = a[i]
-    i=-1
-print(a)
